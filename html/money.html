@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyShop - LotShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sport.css">
+    <link rel="stylesheet" href="../css/money.css">
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <a href="../html/index.html" class="header-logo-link">
+                <img src="../images/LotShop.png" alt="Logo Icon" class="header-left-logo">
+            </a>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Пошук грошей або валюти...">
+                <button id="searchBtn" class="search-btn">
+                    <svg viewBox="0 0 24 24" class="search-icon-svg">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="header-cart" id="cartBtn">
+                <svg viewBox="0 0 24 24" class="cart-icon">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <div class="cart-info">
+                    <span id="cartCount">0 шт.</span>
+                    <span id="cartSum">0 ₴</span>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <a href="../html/sport.html" class="nav-btn">SportShop</a>
+            <button class="nav-btn active" onclick="filterMoneyCategory('real', this)">Реальні гроші</button>
+            <button class="nav-btn" onclick="filterMoneyCategory('fake', this)">Фейкові гроші</button>
+            <a href="../html/lotery.html" class="nav-btn">LoteryShop</a>
+            <a href="../html/questions.html" class="nav-btn">Питання</a>
+        </nav>
+    </header>
+
+    <main id="moneyExchangeContainer">
+
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <img src="../images/LotShop.png" alt="Mini Logo" class="footer-mini-logo">
+            <span>© LotShop , Inc</span>
+        </div>
+        <div class="footer-phone">
+            номер зв'язку - +380950801234
+        </div>
+    </footer>
+
+    <script src="../js/moneyshop.js"></script>
+</body>
+</html>

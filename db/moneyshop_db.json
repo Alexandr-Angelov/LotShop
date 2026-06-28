@@ -1,0 +1,65 @@
+[
+  {
+    "id": "money_USD",
+    "code": "USD",
+    "name": "Реальні Долари ($)",
+    "image": "../images/MoneyShop/d.png",
+    "type": "real"
+  },
+  {
+    "id": "money_EUR",
+    "code": "EUR",
+    "name": "Реальні Євро (€)",
+    "image": "../images/MoneyShop/e.png",
+    "type": "real"
+  },
+  {
+    "id": "money_KZT",
+    "code": "KZT",
+    "name": "Реальні Тенге (₸)",
+    "image": "../images/MoneyShop/t.png",
+    "type": "real"
+  },
+  {
+    "id": "money_INR",
+    "code": "INR",
+    "name": "Реальні Рупії (₹)",
+    "image": "../images/MoneyShop/к.png",
+    "type": "real"
+  },
+  {
+    "id": "money_FAKE_USD",
+    "code": "FAKE_USD",
+    "name": "Фейкові Долари ($)",
+    "image": "../images/MoneyShop/df.png",
+    "type": "fake"
+  },
+  {
+    "id": "money_FAKE_EUR",
+    "code": "FAKE_EUR",
+    "name": "Фейкові Євро (€)",
+    "image": "../images/MoneyShop/ef.png",
+    "type": "fake"
+  },
+  {
+    "id": "money_FAKE_KZT",
+    "code": "FAKE_KZT",
+    "name": "Фейкові Тенге (₸)",
+    "image": "../images/MoneyShop/tf.png",
+    "type": "fake"
+  },
+  {
+    "id": "money_FAKE_INR",
+    "code": "FAKE_INR",
+    "name": "Фейкові Рупії (₹)",
+    "image": "../images/MoneyShop/kf.png",
+    "type": "fake"
+  },
+  {
+    "id": "money_FAKE_UAH",
+    "code": "FAKE_UAH",
+    "name": "Фейкові Гривні (₴)",
+    "image": "../images/MoneyShop/g.png",
+    "type": "fake"
+  }
+]

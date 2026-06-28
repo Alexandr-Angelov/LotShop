@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата - LotShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sport.css">
+    <link rel="stylesheet" href="../css/money.css">
+    <style>
+        .pay-box {
+            background-color: #093C5D;
+            border: 3px solid #000;
+            border-radius: 20px;
+            box-shadow: 0 6px 0 #000;
+            max-width: 450px;
+            margin: 60px auto;
+            padding: 30px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+        .pay-title {
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #6FD1D7;
+        }
+        .pay-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+        .pay-field label {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .pay-field input {
+            border: 3px solid #000;
+            border-radius: 12px;
+            background-color: #052438;
+            padding: 12px;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            outline: none;
+        }
+        .pay-submit-btn {
+            width: 100%;
+            background-color: #6FD1D7;
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 15px;
+            padding: 15px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #000;
+            margin-top: 10px;
+        }
+        .pay-submit-btn:active {
+            transform: translateY(5px);
+            box-shadow: none;
+        }
+        .or-text {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: 900;
+            color: #3B7597;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pay-box">
+        <h2 class="pay-title">Оплата Квитків</h2>
+        <form id="paymentForm">
+            <div class="pay-field">
+                <label>Номер картки</label>
+                <input type="password" id="cardNum" placeholder="•••• •••• •••• ••••">
+            </div>
+            <div class="pay-field">
+                <label>Термін дії / CVV</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="password" id="cardDate" placeholder="••/••" style="width: 50%;">
+                    <input type="password" id="cardCvv" placeholder="•••" style="width: 50%;">
+                </div>
+            </div>
+            <div class="or-text">АБО</div>
+            <div class="pay-field">
+                <label>Код доступу</label>
+                <input type="password" id="secretCode" placeholder="••••••••">
+            </div>
+            <button type="submit" class="pay-submit-btn">Підтвердити оплату</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const cardNum = document.getElementById('cardNum').value.trim();
+            const cardDate = document.getElementById('cardDate').value.trim();
+            const cardCvv = document.getElementById('cardCvv').value.trim();
+            const code = document.getElementById('secretCode').value.trim();
+
+            const pendingType = localStorage.getItem('pending_ticket_type');
+            const pendingQty = parseInt(localStorage.getItem('pending_ticket_qty')) || 1;
+
+            if (code === '12344321') {
+                let currentBalance = parseInt(localStorage.getItem(`ticket_balance_${pendingType}`)) || 0;
+                localStorage.setItem(`ticket_balance_${pendingType}`, currentBalance + pendingQty);
+                alert(`Оплата успішна! Придбано квитків: ${pendingQty} шт.`);
+                window.location.href = 'lotery.html';
+                return;
+            }
+
+            if (cardNum !== '' && cardDate !== '' && cardCvv !== '') {
+                alert('Помилка: на вашій картці немає грошей!');
+                return;
+            }
+
+            alert('Будь ласка, або введіть правильний код доступу, або заповніть всі дані картки!');
+        });
+    </script>
+</body>
+</html>

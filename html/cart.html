@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик - LotShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sport.css">
+</head>
+<body>
+
+    <header>
+        <a href="../html/index.html" class="header-logo-link">
+            <img src="../images/LotShop.png" alt="Logo Icon" class="header-left-logo">
+        </a>
+        
+        <div class="logo-container">
+            <h1 class="main-logo">
+                <span>L</span>
+                <img src="../images/bb_icon.png" alt="Basketball" class="logo-ball-bb">
+                <span>tSh</span>
+                <img src="../images/fb_icon.png" alt="Football" class="logo-ball-fb">
+                <span>p</span>
+            </h1>
+        </div>
+        
+        <nav>
+            <a href="../html/sport.html" class="nav-btn">SportShop</a>
+            <a href="../html/money.html" class="nav-btn">MoneyShop</a>
+            <a href="../html/lotery.html" class="nav-btn">LoteryShop</a>
+            <a href="../html/questions.html" class="nav-btn">Питання</a>
+        </nav>
+    </header>
+
+    <main class="cart-main">
+        <div class="cart-container">
+            <div class="cart-header-row">
+                <h2 class="cart-page-title">Ваше замовлення</h2>
+                <button id="clearCartBtn" class="clear-cart-btn" onclick="clearCart()">Очистити кошик</button>
+            </div>
+            
+            <div id="cartItemsList" class="cart-items-list">
+
+            </div>
+
+            <div class="cart-total-box">
+                <span>Всього до сплати:</span>
+                <span id="cartPageSum">0 ₴</span>
+            </div>
+        </div>
+
+        <div class="checkout-form-container">
+            <h2 class="cart-page-title">Оформлення доставки</h2>
+            <form id="checkoutForm" onsubmit="handleCheckout(event)">
+                <div class="form-group">
+                    <label for="userName">ПІБ Отримувача</label>
+                    <input type="text" id="userName" required placeholder="Іванов Іван Іванович">
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Номер телефону</label>
+                    <input type="tel" id="userPhone" required placeholder="+380">
+                </div>
+                <div class="form-group">
+                    <label for="userCity">Місто доставки</label>
+                    <input type="text" id="userCity" required placeholder="Запоріжжя">
+                </div>
+                <div class="form-group">
+                    <label for="userPost">Відділення Нової Пошти</label>
+                    <input type="text" id="userPost" required placeholder="№1, вул. Головна">
+                </div>
+                <button type="submit" class="checkout-submit-btn">Оформити замовлення</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <img src="../images/LotShop.png" alt="Mini Logo" class="footer-mini-logo">
+            <span>© LotShop , Inc</span>
+        </div>
+        <div class="footer-phone">
+            номер зв'язку - +380950801234
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+</body>
+</html>

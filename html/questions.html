@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питання - LotShop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sport.css">
+    <style>
+        .questions-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        .form-box {
+            background-color: #093C5D;
+            border: 3px solid #000;
+            border-radius: 20px;
+            box-shadow: 0 6px 0 #000;
+            padding: 30px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+        }
+        .form-title {
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #6FD1D7;
+            text-shadow: 0 2px 0 #000;
+        }
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .form-field label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+        .form-field input, .form-field textarea {
+            border: 3px solid #000;
+            border-radius: 12px;
+            background-color: #052438;
+            padding: 12px;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.05rem;
+            outline: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .form-field textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-submit-btn {
+            width: 100%;
+            background-color: #6FD1D7;
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 15px;
+            padding: 15px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #000;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .form-submit-btn:active {
+            transform: translateY(5px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="header-top">
+            <a href="../html/index.html" class="header-logo-link">
+                <img src="../images/LotShop.png" alt="Logo Icon" class="header-left-logo">
+            </a>
+
+            <div class="header-cart" id="cartBtn">
+                <svg viewBox="0 0 24 24" class="cart-icon">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <div class="cart-info">
+                    <span id="cartCount">0 шт.</span>
+                    <span id="cartSum">0 ₴</span>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <a href="../html/sport.html" class="nav-btn">SportShop</a>
+            <a href="../html/money.html" class="nav-btn">MoneyShop</a>
+            <a href="../html/lotery.html" class="nav-btn">LoteryShop</a>
+            <a href="../html/questions.html" class="nav-btn active">Питання</a>
+        </nav>
+    </header>
+
+    <main class="questions-container">
+        <div class="form-box">
+            <h2 class="form-title">Задати Питання</h2>
+            <form action="https://formspree.io/f/xkolbbda" method="POST">
+                <div class="form-field">
+                    <label>ПІБ (Прізвище, Ім'я, По батькові)</label>
+                    <input type="text" name="ФИО" placeholder="Іванов Іван Іванович" required>
+                </div>
+                <div class="form-field">
+                    <label>Ваш Емейл</label>
+                    <input type="email" name="Имейл" placeholder="ivan1234@gmail.com" required>
+                </div>
+                <div class="form-field">
+                    <label>Повідомлення (Ваше питання)</label>
+                    <textarea name="Сообщения" placeholder="Введіть ваше питання сюди..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit-btn">Надіслати питання</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <img src="../images/LotShop.png" alt="Mini Logo" class="footer-mini-logo">
+            <span>© LotShop , Inc</span>
+        </div>
+        <div class="footer-phone">номер зв'язку - +380950801234</div>
+    </footer>
+
+    <script src="../js/questions.js"></script>
+</body>
+</html>
